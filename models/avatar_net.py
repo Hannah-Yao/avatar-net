@@ -46,7 +46,7 @@ class AvatarNet(object):
         # training quantities #
         #######################
         self.content_weight = options.get('content_weight')
-        self.recons_weight = options.get('recons_weight')
+        self.recons_weight = options.get('recons_weight'
         self.tv_weight = options.get('tv_weight')
         self.weight_decay = options.get('weight_decay')
 
@@ -91,7 +91,7 @@ class AvatarNet(object):
         styles_features = []
         for style in styles:
             style_image_features = losses.extract_image_features(
-                style, self.network_name)
+                style, self.network_name, reuse=False)
             style_features = losses.compute_content_features(
                 style_image_features, self.style_loss_layers)
             styles_features.append(style_features)
