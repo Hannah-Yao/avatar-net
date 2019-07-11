@@ -42,8 +42,9 @@ def compute_sufficient_statistics(feature):
 def compute_content_features(features, content_loss_layers):
     """compute the content features from the end_point dict"""
     content_features = {}
-    instance_label = features.keys()[0]
-    instance_label = instance_label[:-14]  # TODO: ugly code, need fix
+    instance_label = "vgg_19"
+    #instance_label = features.keys()[0]
+    #instance_label = instance_label[:-14]  # TODO: ugly code, need fix
     for layer in content_loss_layers:
         content_features[layer] = features[instance_label + '/' + layer]
     return content_features
