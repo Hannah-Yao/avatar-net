@@ -14,7 +14,7 @@ EVAL_DATASET_DIR=$4
 CONFIG_DIR=./configs/AvatarNet_config.yml
 
 # the network path for the trained auto-encoding network (need to change accordingly)
-MODEL_DIR=/DATA/AvatarNet
+MODEL_DIR=./Model/avatar/model.ckpt-120000
 
 CUDA_VISIBLE_DEVICES=${CUDA_ID} \
     python evaluate_style_transfer.py \
